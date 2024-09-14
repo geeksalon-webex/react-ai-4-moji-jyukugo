@@ -1,0 +1,28 @@
+:root {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+
+  /* Light theme */
+  --nc-tx-1: #000000;
+  --nc-tx-2: #1a1a1a;
+  --nc-bg-1: #ffffff;
+  --nc-bg-2: #f6f8fa;
+  --nc-bg-3: #e5e7eb;
+  --nc-lk-1: #b23b61;
+  --nc-lk-2: #b52856;
+  --nc-lk-tx: #ffffff;
+  --nc-ac-1: #f4a500;
+  --nc-ac-tx: #333;
+
+  /* Dark theme */
+  --nc-d-tx-1: #ffffff;
+  --nc-d-tx-2: #eeeeee;
+  --nc-d-bg-1: #000000;
+  --nc-d-bg-2: #111111;
+  --nc-d-bg-3: #222222;
+  --nc-d-lk-1: #b23b61;
+  --nc-d-lk-2: #b52856;
+  --nc-d-lk-tx: #ffffff;
+  --nc-d-ac-1: #7928ca;
+  --nc-d-ac-tx: #ffffff;
+}

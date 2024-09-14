@@ -1,0 +1,59 @@
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.explanation-container {
+  text-align: center;
+}
+
+.grid-selected-kanji {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 640px;
+  font-size: 3rem;
+  font-weight: bold;
+  min-height: 100px;
+  border: 1px solid #000;
+  text-align: center;
+}
+
+.generate-result {
+  margin-top: 1rem;
+  border: 1px solid #000;
+  padding: 1rem;
+  max-width: 640px;
+}
+
+.generate-kanji-description {
+  padding-top: 1rem;
+  max-width: 640px;
+
+  p:nth-child(1) {
+    margin-bottom: 2rem;
+  }
+
+  p {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.grid-kanji {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(3rem, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 640px;
+}
+
+.select-kanji-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+}

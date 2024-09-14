@@ -5,13 +5,18 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import "./global.css";
 
 export function Layout({ children }) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
+        />
         <Meta />
         <Links />
       </head>
