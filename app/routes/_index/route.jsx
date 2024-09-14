@@ -103,26 +103,20 @@ export default function Index() {
         </div>
         <div>
           <h2>あなたの選んだ漢字は</h2>
-          <div className="grid-selected-kanji mx-auto">
-            {selectedKanji.map((kanji, i) => (
-              <span key={i}>{kanji}</span>
-            ))}
+          <div className="kanji-container mx-auto">
+            <div className="grid-selected-kanji">
+              {selectedKanji.map((kanji, i) => (
+                <span key={i}>{kanji}</span>
+              ))}
+            </div>
+            {generateResult.isSuccess && (
+              <>
+                <h2>（{generateResult.ruby}）</h2>
+                <p>解説：{generateResult.description}</p>
+              </>
+            )}
           </div>
         </div>
-        {generateResult.isSuccess && (
-          <>
-            <div className="generate-result mx-auto">
-              <h2>
-                <ruby>
-                  {generateResult.jukugo} <rp>(</rp>
-                  <rt>{generateResult.ruby}</rt>
-                  <rp>)</rp>
-                </ruby>
-              </h2>
-              <p>解説：{generateResult.description}</p>
-            </div>
-          </>
-        )}
       </div>
       <div className="generate-kanji-description mx-auto">
         <div>

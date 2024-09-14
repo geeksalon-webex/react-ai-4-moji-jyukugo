@@ -11,17 +11,20 @@
   text-align: center;
 }
 
+.kanji-container {
+  padding: 1rem;
+  max-width: 640px;
+  border: 1px solid #000;
+}
+
 .grid-selected-kanji {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
   gap: 1rem;
-  padding: 1rem;
-  max-width: 640px;
   font-size: 3rem;
   font-weight: bold;
   min-height: 100px;
-  border: 1px solid #000;
   text-align: center;
 }
 
