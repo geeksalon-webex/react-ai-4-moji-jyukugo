@@ -3,7 +3,7 @@ const logger = require("firebase-functions/logger");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 exports.generateJukugoDescription = onRequest(
-  { region: "asia-northeast1", maxInstances: 1 },
+  { region: "asia-northeast1", maxInstances: 1, cors: ["*"] },
   async (request, response) => {
     try {
       if (request.method !== "POST") {
@@ -15,11 +15,16 @@ exports.generateJukugoDescription = onRequest(
        */
       const { input } = request.body;
       if (typeof input !== "string") {
-        response.status(400).send("Bad Request");
+        response
+          .status(400)
+          .json({ error: "Bad Request", reason: "input is not a string" });
         return;
       }
       if (input.length !== 4) {
-        response.status(400).send("Bad Request");
+        response.status(400).json({
+          error: "Bad Request",
+          reason: "input is not a string of 4 characters",
+        });
         return;
       }
       const result = await runAI(input);
@@ -41,7 +46,7 @@ async function runAI(input) {
   const model = genAI.getGenerativeModel({
     model: "gemini-1.5-flash",
     systemInstruction:
-      "入力する漢字四文字はオリジナルの四文字熟語です。\n入力した四文字熟語を`jukugo`に出力してください。\n四文字熟語の読み方を`ruby`に出力してください。\n四文字熟語の説明を`description`に出力してください。\n出力の生成に成功したかを`isSuccess`にbooleanで出力してください。\nプロパティを欠かさずに完全なスキーマに沿って出力してください。",
+      "入力する漢字四文字はオリジナルの四文字熟語です。\n入力した四文字熟語を`jukugo`に出力してください。\n四文字熟語の読み方を`ruby`に出力してください。\n四文字熟語の説明を`description`に出力してください。(ただし、何かに由来するなど出典用いた説明は止めてください。)\n出力の生成に成功したかを`isSuccess`にbooleanで出力してください。\nプロパティを欠かさずに完全なスキーマに沿って出力してください。",
   });
 
   const chatSession = model.startChat({
