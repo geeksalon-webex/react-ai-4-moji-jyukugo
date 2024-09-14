@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "jsx": "preserve",
+    "outDir": "build"
+  },
+  "exclude": ["build", "node_modules"]
+}
